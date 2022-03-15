@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title> Online Grocery Store </title>
+</head>
+
+<body>
+{% if type_list %}
+    <h2> List of Types </h2>
+    <ol>
+        {% for type in type_list %}
+{#            <p><a href={% url 'myapp1:detail' parameter= type.id|floatformat:"0" %}>{{ type.name}}</a></p>#}
+            <p><a href="/myapp1/{{type.id|floatformat:"0"}}">{{ type.name}}</a></p>
+        {% endfor %}
+    </ol>
+{% else %}
+<strong> None of the types is available! </strong>
+{% endif %}
+<p><a href={% url 'myapp1:about' %}>About Page</a></p>
+
+</body>
+</html>
