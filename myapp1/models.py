@@ -18,10 +18,13 @@ class Item(models.Model):
     stock = models.PositiveIntegerField(default=100)
     available = models.BooleanField(default=True)
     desc = models.TextField(blank=True, null=True)
+    interested = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return "name: {0}, type: {1}, price: {2}, stock: {3}".format(self.name, self.type, self.price, self.stock)
 
+    def topup(self):
+        self.stock += 200
 
 class Client(User):
     CITY_CHOICES = [('WD', 'Windsor'), ('TO', 'Toronto'), ('CH', 'Chatham'), ('WL', 'WATERLOO')]

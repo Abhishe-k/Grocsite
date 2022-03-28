@@ -27,8 +27,17 @@ def about(request):
 def detail(request, type_no):
     type_by_id = get_object_or_404(Type, id=type_no)
     item_by_type = Item.objects.filter(type_id=type_no)
-    response = HttpResponse()
+    # response = HttpResponse()
     para = '<p>' + str(type_by_id.id) + ': ' + str(type_by_id.name) + '</p>'
-    response.write(para)
+    # response.write(para)
     # return response
     return render(request, 'myapp1/detail0.html', {'type': type_by_id, 'items': item_by_type})
+
+
+def items(request):
+    itemlist = Item.objects.all().order_by('id')[:20]
+    return render(request, 'myapp1/items.html', {'itemlist': itemlist})
+
+
+def placeorder(request):
+    return HttpResponse("You can place your order here.")

@@ -4,6 +4,8 @@ app_name = 'myapp1'
 urlpatterns = [
     path('', views.index, name='index'),
     path('myapp1/about/', views.about, name='about'),
-    path('myapp1/<int:type_no>/', views.detail, name='detail')
+    path('myapp1/<int:type_no>/', views.detail, name='detail'),
+    path('myapp1/items', views.items, name='item'),
+    path('myapp1/placeholder', views.placeorder, name='placeholder'),
 
 ]

@@ -1,12 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-<meta charset="UTF-8">
-<title> Online Grocery Store </title>
-</head>
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head lang="en">#}
+{#<meta charset="UTF-8">#}
+{#<title> Online Grocery Store </title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{#The type for type no: {{ type.id }} is {{type.name}}#}
+{#<br/>#}
+{#<br/>#}
+{#The type {{ type.name }} contains following items:#}
+{##}
+{#{% for i in items %}#}
+{#        <li> {{ i.name}} </li>#}
+{#        {% endfor %}#}
+{#<p><a href={% url 'myapp1:index' %}>Main Page</a></p>#}
+{##}
+{#</body>#}
+{#</html>#}
 
-<body>
-The type for type no: {{ type.id }} is {{type.name}}
+{% extends 'myapp1/base.html' %}
+
+{% block body_block %}
+
+    The type for type no: {{ type.id }} is {{type.name}}
 <br/>
 <br/>
 The type {{ type.name }} contains following items:
@@ -14,7 +31,6 @@ The type {{ type.name }} contains following items:
 {% for i in items %}
         <li> {{ i.name}} </li>
         {% endfor %}
-<p><a href={% url 'myapp1:index' %}>Main Page</a></p>
+{#<p><a href={% url 'myapp1:index' %}>Main Page</a></p>#}
+{% endblock %}
 
-</body>
-</html>
