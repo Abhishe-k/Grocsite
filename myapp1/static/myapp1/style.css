@@ -1,11 +1,11 @@
-h1 {
-    background-color: aliceblue;
-    color: black;
-    font-size: 50px;
-    font-style: italic;
-    position: relative;
-}
 .hbar1 {
-    display: inline;
-    margin: 15px;
+	display: inline;
+ 	margin: 15px;
+}
+
+h1 {
+	background-color: black;
+  	color: white;
+	font-size: xx-large;
+	font-style: italic;
 }
