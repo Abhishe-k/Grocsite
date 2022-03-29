@@ -7,7 +7,7 @@
 </head>
 <body>
 <div>
-    <h1>{% block myhdg %} Hello Group No. 1 {% endblock %}</h1>
+    <h1>{% block myhdg %} Hello from Group-1 {% endblock %}</h1>
     {% block body_block %}*** {% endblock %}
 </div>
 <hr />
@@ -15,6 +15,7 @@
     <ul>
         <li class="hbar1"><a href="http://127.0.0.1:8000/myapp1/about/"> Find out about this site </a></li>
         <li class="hbar1"><a href = "{% url 'myapp1:index'%}"> Click here to return to main page </a><br/></li>
+        <li class="hbar1"><a href = "{% url 'myapp1:item'%}"> Click here to see items </a><br/></li>
     </ul>
 </div>
 </body>

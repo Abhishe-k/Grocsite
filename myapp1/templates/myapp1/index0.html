@@ -19,7 +19,7 @@
     <ol>
         {% for type in type_list %}
 {#            <p><a href={% url 'myapp1:detail' parameter= type.id|floatformat:"0" %}>{{ type.name}}</a></p>#}
-            <p>{{type.id|floatformat:"0"}}. <a href="/myapp1/{{type.id|floatformat:"0"}}">{{ type.name}}</a></p>
+            <p><a href="/myapp1/{{type.id|floatformat:"0"}}">{{ type.name}}</a></p>
         {% endfor %}
     </ol>
 {% else %}

@@ -8,5 +8,4 @@ urlpatterns = [
     path('myapp1/items', views.items, name='item'),
     path('myapp1/placeorder', views.placeorder, name='placeorder'),
 
-
 ]

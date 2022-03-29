@@ -21,7 +21,7 @@ class Item(models.Model):
     interested = models.PositiveIntegerField(default=0)
 
     def __str__(self):
-        return "name: {0}, type: {1}, price: {2}, stock: {3} ".format(self.name, self.type, self.price, self.stock)
+        return "name: {0}, type: {1}, price: {2}, stock: {3}".format(self.name, self.type, self.price, self.stock)
 
     def topup(self):
         self.stock += 200
@@ -37,10 +37,6 @@ class Client(User):
     def __str__(self):
         return "username: {0}, Address: {1}, City: {2}, Interests: {3}".format(self.username, self.shipping_address,
                                                                                self.city, self.interested_in)
-
-    def topup(self):
-        self.stock = self.stock + 200
-        self.save()
 
 
 class OrderItem(models.Model):
