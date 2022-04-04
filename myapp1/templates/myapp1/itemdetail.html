@@ -1,0 +1,34 @@
+
+{% extends 'myapp1/base.html' %}
+
+{% block body_block %}
+
+<br/>
+<br/>
+
+    {%if msg %}
+        {{ msg }}
+
+    {% else %}
+{#        {% for i in item %}#}
+    You selected Item with Id {{ item.id }}
+    <br/>
+    Item: {{ item.name }}
+    <br/>
+    Interested: {{ item.interested }}
+    <br/>
+    Price: {{ item.price }}
+{#        {% endfor %}#}
+    {% endif %}
+
+<div class="container">
+    <form method="POST">
+      <fieldset>
+        <legend>Form</legend>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </fieldset>
+    </form>
+</div>
+{% endblock %}
